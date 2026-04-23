@@ -39,9 +39,9 @@ class CategoryController extends Controller
         return response()->json(null, 204);
     }
 
-    public function getCategoriesByProduct($productId)
+    public function getCategoriesByProduct(Product $product)
     {
-        $product = Product::findOrFail($productId);
         return response()->json($product->categories);
     }
+
 }
